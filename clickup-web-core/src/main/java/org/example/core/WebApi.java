@@ -113,7 +113,7 @@ public class WebApi {
         }
     }
     public WebElement waitForElementVisible(WebElement element) {
-        this.waitExplicit = new WebDriverWait(this.driver, (long)180);
+        this.waitExplicit = new WebDriverWait(this.driver, (long)30);
 
         try {
             element = (WebElement)this.waitExplicit.until(ExpectedConditions.visibilityOf(element));
