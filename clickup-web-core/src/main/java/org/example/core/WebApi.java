@@ -258,4 +258,16 @@ public class WebApi {
         element = this.waitForElementVisible(element);
         return element.getText();
     }
+    public void waitForElementInvisible(WebElement element) {
+        this.overrideGlobalTimeout(WebAppDriverManager.getSHORT_TIMEOUT());
+        this.waitExplicit = new WebDriverWait(this.driver, WebAppDriverManager.getSHORT_TIMEOUT());
+
+        try {
+            this.waitExplicit.until(ExpectedConditions.invisibilityOf(element));
+        } catch (Exception var3) {
+            System.err.println(var3.getMessage() + "\n");
+        }
+
+        this.overrideGlobalTimeout(WebAppDriverManager.getLONG_TIMEOUT());
+    }
 }
