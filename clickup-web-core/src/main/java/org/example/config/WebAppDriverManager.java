@@ -29,6 +29,7 @@ public class WebAppDriverManager {
         }else if(browser.equalsIgnoreCase("hchrome")){
             WebDriverManager.chromedriver().setup();
             chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments(new String[]{"window-size=1920,1080"});
             chromeOptions.addArguments(new String[]{"headless"});
             tmpDriver = new ChromeDriver(chromeOptions);
         }
